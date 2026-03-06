@@ -8,10 +8,13 @@ ssh:
         conditional:
           description: Access all VMs
           requestors:
+            - userpass.demo-0
             - userpass.demo-1
             - userpass.demo-2
           approvers:
             - userpass.demo-0
+            - userpass.demo-1
+            - userpass.demo-2
 
 kubernetes:
   type: kubernetes
@@ -25,10 +28,13 @@ kubernetes:
           - userpass.demo-0
         conditional:
           requestors:
+            - userpass.demo-0
             - userpass.demo-1
             - userpass.demo-2
           approvers:
             - userpass.demo-0
+            - userpass.demo-1
+            - userpass.demo-2
 
 pki/ca:
   type: pki
@@ -44,10 +50,13 @@ pki/ca:
           required_approvals: 0
           require_justification: true
           requestors:
+            - userpass.demo-0
             - userpass.demo-1
             - userpass.demo-2
           approvers:
             - userpass.demo-0
+            - userpass.demo-1
+            - userpass.demo-2
 
 adhoc:
   type: vault
@@ -61,10 +70,13 @@ adhoc:
           required_approvals: 0
           require_justification: true
           requestors:
+            - userpass.demo-0
             - userpass.demo-1
             - userpass.demo-2
           approvers:
             - userpass.demo-0
+            - userpass.demo-1
+            - userpass.demo-2
     secrets-reader:
       access:
         static:
@@ -74,7 +86,10 @@ adhoc:
           required_approvals: 2
           require_justification: true
           requestors:
+            - userpass.demo-0
             - userpass.demo-1
             - userpass.demo-2
           approvers:
             - userpass.demo-0
+            - userpass.demo-1
+            - userpass.demo-2
